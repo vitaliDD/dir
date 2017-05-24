@@ -46,17 +46,23 @@ public class Dz1 {
         
         //zadanie 4
                 
-        int money=561;
+        int money=10101984;
         String okonchanie="";
+        if(money%100>10&&money%100<20)
+            System.out.println(money+" рублей");
+        else{
         switch(money%10){
             case 1: okonchanie="рубль";
                 break;
             case 2: 
-            case 3: okonchanie="рубля";  
+            case 3:
+            case 4: okonchanie="рубля";  
                 break;
             default: okonchanie="рублей";          
         }
         System.out.println(money+" "+okonchanie);
+                
+                }
         System.out.println("================================");
         
         //zadanie 5
