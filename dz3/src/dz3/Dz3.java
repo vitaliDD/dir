@@ -27,11 +27,9 @@ public class Dz3 {
         System.arraycopy(mass, 0, mass3, 0, mass.length);
         vivod(mass, "Nachalniy massiv:");
         vivod(sort1(mass), "Otsortirovanii massiv metodom Arrays.sort:");
-        chet(mass);
         vivod(sort2(mass2), "Otsortirovanii massiv metodom puzirka:");
-        chet(mass2);
         vivod(sort3(mass3), "Otsortirovanii massiv metodom Sortitovka viborom:");
-        chet(mass3);
+        chet(mass);
 
     }
 
