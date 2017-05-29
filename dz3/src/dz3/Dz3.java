@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dz3;
+//package dz3;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -17,22 +17,25 @@ public class Dz3 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         int[] mass = vvod();
         //int [] mass={2,3,8,5,1,7,5,8,8,4};
         int[] mass2 = new int[mass.length];
         int[] mass3 = new int[mass.length];
-        //ÐºÐ¾Ð¿Ð¸Ñ€ÑƒÐµÐ¼ Ð² Ð½Ð¾Ð²Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð² Ð´Ð»Ñ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð¼ÐµÑ‚Ð¾Ð´Ð° ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ¸
+        //êîïèðóåì â íîâûé ìàññèâ äëÿ íîâîãî ìåòîäà ñîðòèðîâêè
         System.arraycopy(mass, 0, mass2, 0, mass.length);
         System.arraycopy(mass, 0, mass3, 0, mass.length);
         vivod(mass, "Nachalniy massiv:");
         vivod(sort1(mass), "Otsortirovanii massiv metodom Arrays.sort:");
+        chet(mass);
         vivod(sort2(mass2), "Otsortirovanii massiv metodom puzirka:");
+        chet(mass2);
         vivod(sort3(mass3), "Otsortirovanii massiv metodom Sortitovka viborom:");
+        chet(mass3);
 
     }
 
-    static int[] vvod() {// Ð²Ð²Ð¾Ð´ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ñ ÐºÐ¾Ð½ÑÐ¾Ð»Ð¸
+    static int[] vvod() {// ââîä ìàññèâà ñ êîíñîëè
         Scanner scan = new Scanner(System.in);
         System.out.println("Vvedite razmer massiva: ");
         int razm = scan.nextInt();
@@ -44,7 +47,7 @@ public class Dz3 {
         return mass1;
     }
 
-    static void vivod(int mass[], String str) {// Ð²Ñ‹Ð²Ð¾Ð´ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð½Ð° ÑÐºÑ€Ð°Ð½
+    static void vivod(int mass[], String str) {// âûâîä ìàññèâà íà ýêðàí
         System.out.println(str);
         for (int i : mass) {
             System.out.print(i + "| ");
@@ -52,12 +55,12 @@ public class Dz3 {
         System.out.println();
     }
 
-    static int[] sort1(int[] mass) {// ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²ÐºÐ° Arrays.sort
+    static int[] sort1(int[] mass) {// ñîðòèðîâêà Arrays.sort
         Arrays.sort(mass);
         return mass;
     }
 
-    static int[] sort2(int[] mass) {//ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°ÐºÐ° Ð¼ÐµÑ‚Ð¾Ð´Ð¾Ð¼ Ð¿ÑƒÐ·Ñ‹Ñ€ÑŒÐºÐ°
+    static int[] sort2(int[] mass) {//ñîðòèðîâàêà ìåòîäîì ïóçûðüêà
 
         for (int i = mass.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
@@ -91,5 +94,14 @@ public class Dz3 {
         }
         return mass;
     }
-
+    static void chet(int[] mass) {
+          System.out.println("Chetnie chisla");
+            for(int i:mass){
+            if(i%2==0)
+              
+                System.out.print(i + "| ");
+        
+        }
+        System.out.println();
+    }
 }
