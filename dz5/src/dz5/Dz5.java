@@ -21,7 +21,7 @@ public class Dz5 {
         
          
         
-        Bankomat bankomat = new Bankomat(10, 10, 15);
+        Bankomat bankomat = new Bankomat(10, 0, 10);
         interfaceB(bankomat);
     }
 

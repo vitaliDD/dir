@@ -58,15 +58,19 @@ public class Bankomat {
 
     public boolean get_money(int need_amount) {
         if (need_amount == get_info2()) {
+            System.out.println("Vam vidano " + need_amount + " rublei:\n100 - " + kol_100 + "sht.\n"
+                + "50 - " + kol_50 + " sht.\n"
+                + "20 - " + kol_20 + "sht.");
             kol_100 = 0;
             kol_50 = 0;
             kol_20 = 0;
+            
             return true;
         }
         boolean done = true;
         int need_50 = 0, need_20 = 0;
         System.out.println("Zaproshennaya summa: " + need_amount);
-        if (get_info2() < need_amount || need_amount < 10) {
+        if (get_info2() < need_amount || need_amount < 20||need_amount%10!=0) {
             return false;
         }
 
@@ -74,7 +78,7 @@ public class Bankomat {
         int need_sum_100 = 0;
         while (kol_20 >= need_20) {
             if (need_sum_50_100 == 0 || (((need_sum_50_100) % 50 == 0) && (need_sum_50_100) <= (kol_100 * 100 + kol_50 * 50))) {
-                kol_20 -= need_20;
+              //  kol_20 -= need_20;
                 //System.out.println("dostig ysloviya 20");
                 break;
             }
@@ -92,7 +96,7 @@ public class Bankomat {
         need_sum_100 = need_sum_50_100;
         while (kol_50 >= need_50) {
             if (/*need_sum_50_100==0||*/(((need_sum_100) % 100 == 0) && (need_sum_100) <= (kol_100 * 100))) {
-                kol_50 -= need_50;
+                //kol_50 -= need_50;
                 //System.out.println("dostig ysloviya 50");
                 break;
             }
@@ -109,6 +113,8 @@ public class Bankomat {
 
         }
         kol_100 -= need_sum_100 / 100;
+        kol_50 -= need_50;
+        kol_20 -= need_20;
         System.out.println("Vam vidano " + need_amount + " rublei:\n100 - " + need_sum_100 / 100 + "sht.\n"
                 + "50 - " + need_50 + " sht.\n"
                 + "20 - " + need_20 + "sht.");
