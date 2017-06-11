@@ -34,7 +34,12 @@ public class Dz9_ {
          
         City Mogilev=new City("Przevalskogo","Lenina","Pobedy","Mogilev");//конструктор с параметрами полей name 
         City Minsk=new City("Minsk");//
-                 
+        //бредовый вариант ниже?? создается 3 ненужных объекта внешнего класса??
+        City Gomel=new City("Gomel", new City().new Name("Mira"), new City().new Name("Nebesnaya"),
+                new City().new Name("Voinov"));
+        
+        
+        
          //различные способы задания полей
          Minsk.setNameProspect(Minsk.new Name("Pushkina"));
          City.Name nn=Minsk.new Name("Kazinca");
@@ -43,6 +48,7 @@ public class Dz9_ {
          
         System.out.println(Mogilev.toString());
         System.out.println(Minsk.toString());
+        System.out.println(Gomel.toString());
        
     }
     

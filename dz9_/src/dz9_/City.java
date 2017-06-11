@@ -61,7 +61,17 @@ public class City {
         this.nameObj=nameObj;
     }
 
-  
+    public City(String nameObj, Name nameProspect, Name nameUlica, Name namePloschad) {
+        this.nameObj = nameObj;
+        this.nameProspect = nameProspect;
+        this.nameUlica = nameUlica;
+        this.namePloschad = namePloschad;
+    }
+
+    public City() {
+    }
+
+    
     
     public City( String nameObj) {
          this.nameObj=nameObj;
