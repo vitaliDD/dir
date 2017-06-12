@@ -59,23 +59,30 @@ public class FileWorker {
     }
 
     public static void read(String fileName, Students[] st) throws IOException {
-
+         File fstream = new File(fileName);
         try  {
-            FileInputStream fstream = new FileInputStream(fileName);
+           
 
-            BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+            BufferedReader br = new BufferedReader(new FileReader(fstream.getAbsoluteFile()));
 
             String strLine;
-
+            int kol=st.length;
+            int i=0;
+            
 
             while ((strLine  = br.readLine()) != null)   {
-
-               System.out.println(strLine);
+                
+                 String[] aa=strLine.split("|");
+                 st[0].setName(aa[0]);
+                // System.out.print(aa[1]);
+                
+              // System.out.println(strLine);
             }
-        String [] aa=line.split("|");
-        String name = strArray[0];
-
+            System.out.println(st[0].getName());
+           // String name = strArray[0];
+           //System.out.print(aa);
             br.close ();
+            
 
             // System.out.print((char)c);
         } 
