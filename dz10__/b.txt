@@ -1,0 +1,3 @@
+aaaa|12|true
+bbbb|44|false
+eeee|55|true
