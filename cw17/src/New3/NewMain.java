@@ -5,7 +5,7 @@ import java.lang.reflect.Modifier;
 
 public class NewMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalArgumentException, IllegalAccessException {
         
         
         MyTest myTest= new MyTest();
@@ -29,8 +29,21 @@ public class NewMain {
             System.out.println("astractnii");
         }
         Field[] fields=clas.getDeclaredFields();
-        for(Field f:fields)
+        for(Field f:fields){
             System.out.println("peremennaya "+f);
+            f.setAccessible(true);
+            
+             Object obj=f.get(myTest);
+             
+             
+             if(obj instanceof String){
+                 System.out.println("value = "+(String)obj);
+                 f.set(myTest,"afagadga");
+                 System.out.println("value = "+(String)f.get(myTest) );
+                 
+             }
+             
+                }
         
         
     }
