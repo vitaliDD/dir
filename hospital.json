@@ -1,0 +1,139 @@
+{
+  "name": "Super bolnica 5",
+  "location": "Minsk",
+  "doctors": [
+    {
+      "id": 0,
+      "name": "Ivan Ivanov",
+      "degree": "FTT",
+      "dateOfBirth": "2004-10-25",
+      "yearEperience": 20,
+      "type": [
+        "Ucho",
+        "Noga"
+      ],
+      "visible": true
+    },
+    {
+      "id": 1,
+      "name": "Alex Petrov",
+      "degree": "PPP",
+      "dateOfBirth": "1998-03-24",
+      "yearEperience": 15,
+      "type": [
+        "Ucho",
+        "Noga",
+        "Golova"
+      ],
+      "visible": true
+    },
+    {
+      "id": 2,
+      "name": "Elena Sergeevna",
+      "degree": "FTT",
+      "dateOfBirth": "1999-05-02",
+      "yearEperience": 10,
+      "type": [
+        "Nos",
+        "Palec"
+      ],
+      "visible": true
+    },
+    {
+      "id": 3,
+      "name": "Olga Kishkina",
+      "degree": "FTT",
+      "dateOfBirth": "1995-12-10",
+      "yearEperience": 34,
+      "type": [
+        "Gorlo",
+        "Ucho"
+      ],
+      "visible": true
+    },
+    {
+      "id": 4,
+      "name": "Sergei Brizheyko",
+      "degree": "PPP",
+      "dateOfBirth": "2005-05-04",
+      "yearEperience": 12,
+      "type": [
+        "Nos",
+        "Ucho"
+      ],
+      "visible": true
+    },
+    {
+      "id": 5,
+      "name": "Andrei Zapoiniy",
+      "degree": "PPP",
+      "dateOfBirth": "1994-06-04",
+      "yearEperience": 76,
+      "type": [
+        "Pechen",
+        "Pochki"
+      ],
+      "visible": true
+    },
+    {
+      "id": 6,
+      "name": "Anna Bezrukova",
+      "degree": "TNT",
+      "dateOfBirth": "1993-04-03",
+      "yearEperience": 23,
+      "type": [
+        "Ruka",
+        "Noga"
+      ],
+      "visible": true
+    },
+    {
+      "id": 7,
+      "name": "Vasiliy Slepoy",
+      "degree": "PPP",
+      "dateOfBirth": "1990-06-07",
+      "yearEperience": 1,
+      "type": [
+        "Glaz",
+        "Pechen"
+      ],
+      "visible": true
+    },
+    {
+      "id": 8,
+      "name": "Pavel Bolnoy",
+      "degree": "TNT",
+      "dateOfBirth": "1917-06-04",
+      "yearEperience": 99,
+      "type": [
+        "Pochki",
+        "Nos"
+      ],
+      "visible": true
+    },
+    {
+      "id": 9,
+      "name": "Genadiy Vetryankin",
+      "degree": "TNT",
+      "dateOfBirth": "1945-06-04",
+      "yearEperience": 32,
+      "type": [
+        "Golova",
+        "Palec"
+      ],
+      "visible": true
+    },
+    {
+      "id": 10,
+      "name": "Irina Nozdrya",
+      "degree": "PMS",
+      "dateOfBirth": "1986-01-02",
+      "yearEperience": 45,
+      "type": [
+        "Ruka",
+        "Golova"
+      ],
+      "visible": true
+    }
+  ]
+}
