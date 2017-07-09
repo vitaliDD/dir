@@ -13,21 +13,22 @@ public class Dz19 {
        
     StaffCollection<People> staffCollection=new StaffCollection<>();
     
-    People Director =new People();
+    People Director =new People("Alex");
     staffCollection.addDirector(Director);
+    
      //   System.out.println("director: "+ staffCollection.getDirector());
     
-    People Ivan1 =new People();
-    People Ivan2 =new People();
-    People Ivan3 =new People();
-    People Ivan4 =new People();
-    People Ivan5 =new People();
+    People Ivan1 =new People("Ivan1");
+    People Ivan2 =new People("Ivan2");
+    People Ivan3 =new People("Ivan3");
+    People Ivan4 =new People("Ivan4");
+    People Ivan5 =new People("Ivan5");
     
-    People Serg1 =new People();
-    People Serg2 =new People();
-    People Serg3 =new People();
-    People Serg4 =new People();
-    People Serg5 =new People();
+    People Serg1 =new People("Serg1");
+    People Serg2 =new People("Serg2");
+    People Serg3 =new People("Serg3");
+    People Serg4 =new People("Serg4");
+    People Serg5 =new People("Serg5");
    
     staffCollection.add("dep1", Ivan1);
     staffCollection.add("dep1", Ivan2);

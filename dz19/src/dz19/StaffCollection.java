@@ -9,6 +9,7 @@ public class StaffCollection<T extends People> {
 
     private HashMap<String, List<T>> data = new HashMap<>();
     private T director;
+    Iter iter=new Iter(newArray);
     //private ArrayList<T> list=new ArrayList<>();
 
     @Override
@@ -55,6 +56,14 @@ public class StaffCollection<T extends People> {
              System.out.println("Departament "+department+" otsytstvyet");
 
             }
+            
+        }
+    public void removeAllFromDepartment(String department, T value) {
+        if (data.containsKey(department)) {
+           data.get(department).clear();
+            }
+            else
+                System.out.println("Departament "+department+" ne sozdano");
             
         }
 
