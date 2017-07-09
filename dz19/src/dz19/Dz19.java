@@ -2,6 +2,8 @@
 
 package dz19;
 
+import java.util.Iterator;
+
 /**
  *
  * @author ya
@@ -42,6 +44,14 @@ public class Dz19 {
     staffCollection.add("dep2", Serg4);
     staffCollection.add("dep2", Serg5);
     
+   // Iterator it=staffCollection.iterator("dep1");
+    Iterator it=staffCollection.iterator();
+       /* System.out.println(it.hasNext());
+        System.out.println(it.next());
+        System.out.println(it.next());*/
+      for(int i=0;i<7;i++)
+            System.out.println(it.next());
+        
     
     
        // test("ffff", String.class);
