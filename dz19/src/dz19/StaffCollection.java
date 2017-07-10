@@ -10,8 +10,6 @@ public class StaffCollection<T extends People> {
 
     private HashMap<String, List<T>> data = new HashMap<>();
     private T director;
-    // Iter iter=new Iter(newArray);
-    //private ArrayList<T> list=new ArrayList<>();
 
     @Override
     public String toString() {
@@ -70,11 +68,13 @@ public class StaffCollection<T extends People> {
 
     //public Iterator<T> iterator(String department) {
     public Iterator<T> iterator() {
-        
+
         int keysSize = data.keySet().size();
         return new Iterator<T>() {
-            Iterator <T> elementIt=null;
-            Iterator keysIt=null;
+            Iterator<T> elementIt = null;
+            Iterator keysIt = null;
+            String keyInd = null;
+
             @Override
             public boolean hasNext() {
                 return false;
@@ -83,32 +83,46 @@ public class StaffCollection<T extends People> {
 
             @Override
             public T next() {
-                if(keysIt==null){
-                    keysIt = data.keySet().iterator();
-                }
-             
-                    if(!data.keySet().isEmpty()){
-                         while(keysIt.hasNext()){
-                             
-                             String keyInd=(String)keysIt.next();
-                             System.out.println(keyInd);
-                             
-                            if(!data.get(keyInd).isEmpty()){
-                                
-                                if(elementIt==null){ 
-                                     elementIt= data.get(keyInd).iterator();
-                                }
-                                while(elementIt.hasNext()){
-                                return data.get(keyInd).iterator().next();
-                                }
-                            }
-                    }
-               }
-                    return null;
-            }
-              
-        
 
-    };
-}
+                if (!data.keySet().isEmpty()) {
+                    if (keysIt == null) {
+                        keysIt = data.keySet().iterator();
+                    }
+                    if (keyInd == null) {
+                        keyInd = (String) keysIt.next();
+                        // System.out.println("voshlo v (String) keysIt.next()");
+                    }
+                    while (true) {
+
+                        //  System.out.println(keyInd);
+                        //  System.out.println(data.get(keyInd).isEmpty());
+                        if (!data.get(keyInd).isEmpty()) {
+                            //System.out.println("voshlo v !data.get(keyInd).isEmpty()");
+                            if (elementIt == null) {
+                                //  System.out.println("voshlo v elementIt == null)");
+                                elementIt = data.get(keyInd).iterator();
+                            }
+                            while (elementIt.hasNext()) {
+                                // System.out.println("voshlo v elementIt.hasNext");
+                                return elementIt.next();
+                            }
+                            //  System.out.println("vihod iz elementIt.hasNext");
+                        }else{
+                        // System.out.println("vihod iz if(!data.get(keyInd).isEmpty()");
+                            System.out.println("Otdel "+keyInd+" pustoi! Vseh uvolili!");
+                        }
+                        if (keysIt.hasNext()) {
+                            keyInd = (String) keysIt.next();
+                            elementIt = null;
+                        } else {
+                            break;
+                        }
+
+                    }
+                }
+                return null;
+            }
+
+        };
+    }
 }
