@@ -1,5 +1,6 @@
 package main;
 
+import data.Doctors;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -9,6 +10,8 @@ import jdk.nashorn.internal.runtime.regexp.RegExp;
 import jdk.nashorn.internal.runtime.regexp.RegExpMatcher;
 
 public class UI {
+
+    final Manager manager = Manager.getManager();
 
     public void start() {
         Scanner scanner = new Scanner(System.in);
@@ -50,16 +53,32 @@ public class UI {
                     break;
 
                 case "3":
-                    chooseSort(scanner);
+                    try {
+                        chooseSort(scanner);
+                    } catch (Exception e) {
+                        System.err.println("Oshibka sortirovki!Proverte, chtobi baza "
+                                + "doctorov bila skachana! : " + e.toString());
+                    }
                     break;
 
                 case "4":
-                    chooseDoctor(scanner);
+                    try {
+                        chooseDoctor(scanner);
+                    } catch (Exception e) {
+                        System.err.println("Oshibka poiska!Proverte, chtobi baza "
+                                + "doctorov bila skachana! : " + e.toString());
+                    }
+                    break;
 
-                    break;
                 case "5":
-                    chooseDegree(scanner);
+                    try {
+                        chooseDegree(scanner);
+                    } catch (Exception e) {
+                        System.err.println("Oshibka poiska!Proverte, chtobi baza "
+                                + "doctorov bila skachana! : " + e.toString());
+                    }
                     break;
+                    
                 case "6":
                     System.out.println("Spasibo za polzovanie! Vsego dobrogo! Schastya i zdoroviya!");
                     System.exit(0);
@@ -68,7 +87,7 @@ public class UI {
     }
 
     private void showDocs() {
-        Manager.getManager().show();
+        manager.show();
 
     }
 
@@ -88,7 +107,7 @@ public class UI {
         switch (otvet) {
             case "1":
             case "2":
-                Manager.getManager().parsef(SuperAdapter.convertStr(otvet));
+                manager.parsef(SuperAdapter.convertStr(otvet));
                 break;
             default:
                 return;
@@ -113,31 +132,26 @@ public class UI {
                 System.out.println("Ne vernii vibor, poprobuite escho raz!!!");
             }
         } while (!mCS.matches());
-        try {
-            switch (otvet) {
-                case "1":
-                    Manager.getManager().sort(1);
-                    System.out.println("Sortirovka po imeni vipolnena uspeshno!");
-                    break;
 
-                case "2":
-                    Manager.getManager().sort(2);
-                    System.out.println("Sortirovla po date rozhdeniya vipolnena uspeshno!");
-                    break;
+        switch (otvet) {
+            case "1":
+                manager.sort(1);
+                System.out.println("Sortirovka po imeni vipolnena uspeshno!");
+                break;
 
-                default:
-                    return;
-            }
-        } catch (Exception e) {
-            System.err.println("Oshibka sortirovki!Proverte, chtobi baza "
-                    + "doctorov bila skachana! : " + e.toString());
+            case "2":
+                manager.sort(2);
+                System.out.println("Sortirovla po date rozhdeniya vipolnena uspeshno!");
+                break;
 
+            default:
+                return;
         }
 
     }
 
     private void chooseDegree(Scanner scanner) {
-        int sizeHm = Manager.getManager().retHmDegree().size();
+        int sizeHm = manager.retHmDegree().size();
         Pattern pCD = Pattern.compile("0||[1-9]+||`");
         Matcher mCD = null;
         String otvet = "";
@@ -145,7 +159,7 @@ public class UI {
 
         do {
             System.out.println("Ukazhite nyzhnyuy degree iz sleduyuschih ili '`' dlya vihoda: ");
-            System.out.println(Manager.getManager().retHmDegree().toString());
+            System.out.println(manager.retHmDegree().toString());
             otvet = scanner.nextLine();
             mCD = pCD.matcher(otvet);
             if (otvet.equals("`")) {
@@ -153,9 +167,9 @@ public class UI {
             }
             if (!otvet.equals("") && mCD.matches() && SuperAdapter.convertStr(otvet) < sizeHm) {
                 // System.out.println("otvet: " + otvet);
-                String spec = Manager.getManager().retHmDegree().get(SuperAdapter.convertStr(otvet));
+                String spec = manager.retHmDegree().get(SuperAdapter.convertStr(otvet));
                 // System.out.println("value: " + spec);
-                ArrayList<Doctors> arD = Manager.getManager().searchDegrees(spec);
+                ArrayList<Doctors> arD = manager.searchDegrees(spec);
                 System.out.println(arD.toString());
                 continue;
             }
@@ -165,7 +179,8 @@ public class UI {
     }
 
     private void chooseDoctor(Scanner scanner) {
-        int sizeHm = Manager.getManager().retHmType().size();
+
+        int sizeHm = manager.retHmType().size();
         Pattern pCD = Pattern.compile("0||[1-9]+||`");
         Matcher mCD = null;
         String otvet = "";
@@ -173,7 +188,7 @@ public class UI {
 
         do {
             System.out.println("Ukazhite nyzhnyuy specializaciyu iz sleduyuschih ili '`' dlya vihoda: ");
-            System.out.println(Manager.getManager().retHmType().toString());
+            System.out.println(manager.retHmType().toString());
             otvet = scanner.nextLine();
             mCD = pCD.matcher(otvet);
             if (otvet.equals("`")) {
@@ -182,9 +197,9 @@ public class UI {
             }
             if (!otvet.equals("") && mCD.matches() && SuperAdapter.convertStr(otvet) < sizeHm) {
                 // System.out.println("otvet: " + otvet);
-                String spec = Manager.getManager().retHmType().get(SuperAdapter.convertStr(otvet));
+                String spec = manager.retHmType().get(SuperAdapter.convertStr(otvet));
                 //  System.out.println("value: " + spec);
-                ArrayList<Doctors> arD = Manager.getManager().searchTypes(spec);
+                ArrayList<Doctors> arD = manager.searchTypes(spec);
                 System.out.println(arD.toString());
                 continue;
             }

@@ -1,5 +1,14 @@
 package main;
 
+import data.Doctors;
+import parse.ParseFile;
+import parse.InternetDownload;
+import parse.XMLParse;
+import parse.JSONParse;
+import search.SearchDegree;
+import search.SearchType;
+import sort.SortByName;
+import sort.SortByDate;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
