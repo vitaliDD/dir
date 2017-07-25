@@ -2,21 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#6aff9f">
+    android:background="#6aff9f"
+    android:orientation="vertical">
 
 
     <Button
+        android:id="@+id/helloButton"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Hello"
-        android:id="@+id/helloButton"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:text="Click" />
 
-    <Button
-        android:layout_width="250dp"
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Bye"
-        android:id="@+id/byeButton"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:text="@string/text1" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="200dp"
+
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:text="@string/text2" />
+
 </LinearLayout>
