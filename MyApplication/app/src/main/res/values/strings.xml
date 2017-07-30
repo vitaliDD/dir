@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">Cw1</string>
-    <string name="text1">Text1</string>
-    <string name="text2">Text2</string>
+    <string name="app_name">MyApp</string>
+
+    <!--Classwork2-->
+    <string name="cw2_name">Name</string>
+    <string name="cw2_login">Login</string>
+
+
 </resources>
