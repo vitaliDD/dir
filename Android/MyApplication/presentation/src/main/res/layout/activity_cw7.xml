@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="activity"
+            type="com.example.user.cw1.cw7.Cw7Activity"/>
+    </data>
+
+
+
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@{activity.myText}"
+        android:id="@+id/superTextView"
+        android:visibility="@{activity.myText==null?View.GONE : View.VISIBLE}"/>
+
+
+
+
+
+
+
+</LinearLayout>
+
+</layout>

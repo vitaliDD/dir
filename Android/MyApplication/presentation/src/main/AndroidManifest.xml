@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.user.cw1">
+    <uses-feature android:name="android.hardware.wifi"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".dz1.dz1Activity"/>
+        <activity android:name=".dz2.dz2Activity"/>
+        <activity android:name=".dz3.dz3Activity"/>
+        <activity android:name=".dz4.dz4Activity"/>
+        <!--<activity android:name=".dz5.Dz5Activity"/>-->
+        <activity android:name=".dz5.Dz5Activity"/>
+        <activity android:name=".dz6.Dz6Activity"/>
+        <activity android:name=".dz7.Dz7Activity"/>
+        <activity android:name=".dz9.Dz9Activity"/>
+        <activity android:name=".dz10.Dz10Activity"/>
+
+        <activity android:name=".cw2.cw2Activity"/>
+        <activity android:name=".cw3.cw3Activity"/>
+        <activity android:name=".cw4.cw4Activity"/>
+        <activity android:name=".cw5.cw5Activity"/>
+        <activity android:name=".cw6.Cw6Activity"/>
+        <activity android:name=".cw7.Cw7Activity"/>
+        <activity android:name=".cw8.Cw8Activity"/>
+        <activity android:name=".cw9.Cw9Activity"/>
+        <activity android:name=".cw12.Cw12Activity"/>
+        <activity android:name=".cw12.cw12ProfileFullItemActivity"/>
+        <activity android:name=".cw13.Cw13Activity"/>
+
+
+
+        <!--<receiver android:name=".cw5.MyBroadcastReceiver">-->
+
+            <!--<intent-filter>-->
+
+                <!--<action android:name="android.net.wifi.WIFI_STATE_CHANGED"/>-->
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>-->
+              <!-- -->
+
+
+            <!--</intent-filter>-->
+
+        <!--</receiver>-->
+
+        <service android:name=".cw5.MyService">
+        </service>
+
+        <service android:name=".cw5.MyIntentService">
+        </service>
+        <service android:name=".dz5.dz5Service">
+        </service>
+    </application>
+
+</manifest>

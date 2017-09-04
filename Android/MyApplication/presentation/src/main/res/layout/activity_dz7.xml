@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="activity"
+            type="com.example.user.cw1.dz7.Dz7Activity"/>
+        <variable
+            name="user"
+            type="com.example.user.cw1.dz7.User"/>
+
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:background='@{user.sex == "male" ? @color/colorPrimary : @color/colorAccent}'
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:gravity="right">
+        <ImageView
+            android:id="@+id/colorImage"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            app:imageUrl="@{user.imageUrl}"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="50dp"
+            tools:src="@drawable/sova"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameTextView"
+            android:text="@{user.name}"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="5dp"
+            android:visibility="@{user.name==null?View.GONE : View.VISIBLE}"
+            tools:src="aaaa"
+            android:textSize="@dimen/textSize"
+            android:textColor="#f5dd22"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/surnameTextView"
+            android:text="@{user.surname}"
+            android:layout_marginRight="50dp"
+
+            android:visibility="@{user.surname==null?View.GONE : View.VISIBLE}"
+            android:textSize="@dimen/textSize"
+            android:textColor="#f5dd22"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ageTextView"
+            android:text="@{String.valueOf(user.age)}"
+            android:layout_marginRight="50dp"
+            android:visibility="@{user.age==0?View.GONE : View.VISIBLE}"
+            android:textSize="@dimen/textSize"
+            android:textColor="#f5dd22"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sexTextView"
+            android:text="@{user.sex}"
+            android:layout_marginRight="50dp"
+            android:visibility="@{user.sex==null?View.GONE : View.VISIBLE}"
+            android:textSize="@dimen/textSize"
+            android:textColor="#f5dd22"/>
+
+
+
+
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+    <data>
+        <import type="android.view.View"/>
+       <variable
+           name="viewModel"
+           type="com.example.user.cw1.dz10.Dz10ViewModel"/>
+
+    </data>
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@{String.valueOf(viewModel.interval)}"
+        tools:text="GGSDGS"/>
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "com.example.user.cw1"
+        minSdkVersion 19
+        targetSdkVersion 23
+        buildConfigField "String", "API_ENDPOINT", '"tut choto napisano iz  buildConfigField"'
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors{
+
+        free{
+            versionCode 1
+            versionName "1.0-free"
+
+        }
+        pay{
+            versionCode 1
+            versionName "1.0-pay"
+
+
+
+        }
+
+    }
+
+
+    dataBinding{
+
+        enabled=true
+    }
+//    compileOptions {
+//        targetCompatibility 1.8
+//        sourceCompatibility 1.8
+//    }
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:design:23.2.1'
+    compile 'com.android.support:support-v4:23.2.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+  //  annotationProcessor 'com.android.databinding:compiler:2.3.0'
+    //compile 'com.android.databinding:compiler:2.3.0'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.1'
+    compile project(path:  ":domain")
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.2'
+}
+
+

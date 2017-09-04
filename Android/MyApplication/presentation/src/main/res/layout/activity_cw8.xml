@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.user.cw1.cw8.Cw8ViewModel"/>
+
+
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:text="@{viewModel.helloText}"
+            android:textSize="20dp"  />
+            <!--android:onClick="@{()-> viewModel.onSuperButtonClick()}"-->
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.example.user.cw1.cw12.ProfileFullItemViewModel"/>
+
+
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/editTextName"
+            android:layout_gravity="center"
+            android:enabled="false"
+            android:text="@={viewModel.name}"
+            android:hint="aaaa"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/editTextSurname"
+            android:enabled="false"
+            android:layout_gravity="center"
+            android:text="@={viewModel.surname}"
+            android:hint="bbbb"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:enabled="false"
+            android:id="@+id/editTextAge"
+            android:text="@={``+viewModel.age}"
+            android:hint="20"/>
+        <Button
+            android:id="@+id/buttonSetEnable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set Enable"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{viewModel::onSetEnableClick}"/>
+
+        <Button
+            android:id="@+id/buttonEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{viewModel::onEditUpdateClick}"/>
+        <Button
+            android:id="@+id/buttonAddNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD NEW"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{viewModel::onAddClick}"/>
+
+
+
+
+    </LinearLayout>
+</layout>

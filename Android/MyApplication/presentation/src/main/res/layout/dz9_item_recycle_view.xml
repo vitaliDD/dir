@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="ItemViewModel"
+            type="com.example.user.cw1.dz9.Dz9ItemViewModel" />
+
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:background="#dfbcbc"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/dz9ImageView"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            tools:src="@drawable/image"
+            app:imageUrl="@{ItemViewModel.url}"/>
+
+
+    </LinearLayout>
+
+</layout>

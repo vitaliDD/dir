@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.user.cw1.cw12.ProfileItemViewModel" />
+
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+       >
+
+       <TextView
+           android:layout_marginTop="3dp"
+           android:background="#6dda7e"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="30sp"
+           android:text="@{viewModel.name}"
+           android:onClick="@{viewModel::onClick}"/>
+    </LinearLayout>
+</layout>
