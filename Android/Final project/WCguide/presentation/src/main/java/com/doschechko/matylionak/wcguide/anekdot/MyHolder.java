@@ -1,18 +1,21 @@
-package com.doschechko.matylionak.wcguide.citaty;
+package com.doschechko.matylionak.wcguide.anekdot;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import com.doschechko.matylionak.wcguide.databinding.ItemAnekdotBinding;
 
-import com.doschechko.matylionak.wcguide.databinding.ItemQuoteBinding;
 
 
 public class MyHolder extends RecyclerView.ViewHolder {
 
-    public ItemQuoteBinding binding;
+    public ItemAnekdotBinding binding;
 
     public MyHolder(View itemView) {
         super(itemView);
+
         binding = DataBindingUtil.bind(itemView);
+
+
     }
 }

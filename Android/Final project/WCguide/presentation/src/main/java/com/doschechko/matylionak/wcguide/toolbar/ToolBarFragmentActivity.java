@@ -30,17 +30,9 @@ public class ToolBarFragmentActivity extends BaseFragmentActivity {
         ToolbarBinding binding = DataBindingUtil
                 .setContentView(this, R.layout.toolbar);
         binding.setViewModel(viewModel);
-        binding.SlidingDrawer.close();
 
-
-//        final SlidingDrawer drawer = (SlidingDrawer) findViewById(R.id.SlidingDrawer);
-//        drawer.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                drawer.animateClose();
-//            }
-//        });
-
+        SlidingDrawer drawer=binding.SlidingDrawer;
+        viewModel.setSlidingDrawer(drawer);
 
         super.onCreate(savedInstanceState);
     }

@@ -1,27 +1,42 @@
 package com.doschechko.matylionak.wcguide.toolbar;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.databinding.BindingAdapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.View;
+import android.widget.SlidingDrawer;
 import android.widget.Toast;
-
-import com.doschechko.matylionak.wcguide.about.AboutFragment;
-import com.doschechko.matylionak.wcguide.maps.Activity_Maps;
 import com.doschechko.matylionak.wcguide.R;
+import com.doschechko.matylionak.wcguide.about.AboutFragment;
+import com.doschechko.matylionak.wcguide.anekdot.Activity_Anekdot;
 import com.doschechko.matylionak.wcguide.base.BaseFragmentActivityViewModel;
+import com.doschechko.matylionak.wcguide.citaty.Activity_Authors;
 import com.doschechko.matylionak.wcguide.citaty.Activity_Quote;
 import com.doschechko.matylionak.wcguide.horoscope.Activity_Horoscope;
+import com.doschechko.matylionak.wcguide.maps.Activity_Item_WC;
+import com.doschechko.matylionak.wcguide.maps.Activity_Maps;
+
+import java.lang.annotation.Annotation;
 
 /**
  * ViewModel for the ToolBar
  */
 
-public class ToolBarFragmentActivityViewModel implements BaseFragmentActivityViewModel {
+public class ToolBarFragmentActivityViewModel implements BaseFragmentActivityViewModel, BindingAdapter {
 
     private FragmentManager fragmentManager;
     private Activity activity;
+    private SlidingDrawer slidingDrawer;
+
+    public void setSlidingDrawer(SlidingDrawer slidingDrawer) {
+        this.slidingDrawer = slidingDrawer;
+    }
+
+
 
     public void setFragmentManager(FragmentManager fragmentManager) {
         this.fragmentManager = fragmentManager;
@@ -36,21 +51,17 @@ public class ToolBarFragmentActivityViewModel implements BaseFragmentActivityVie
 
     @Override
     public void init() {
+
     }
 
     @Override
     public void release() {
 
-
     }
 
     @Override
     public void resume() {
-        Log.e("mylog","ToolBarFragmentActivityViewModel: onResume ");
-       // showFragment(fragmentManager, new Activity_maps(), false);
-      //  showFragment(fragmentManager, new Activity_Maps(), false);
         showFragment(fragmentManager, new Activity_Maps(), false);
-
     }
 
     @Override
@@ -63,29 +74,32 @@ public class ToolBarFragmentActivityViewModel implements BaseFragmentActivityVie
         //it starts an AboutUsActivity
         Toast.makeText(activity, "О нас", Toast.LENGTH_SHORT).show();
         showFragment(fragmentManager, new AboutFragment(), false);
-       // showFragment(fragmentManager, new Activity_Maps(), false);
-
-//        Intent intent = new Intent(activity, Activity_Maps.class);
-//        activity.startActivity(intent);
-
-
+        slidingDrawer.animateClose();
     }
 
 
-
     public void onClickOpenQuote() {
-
         //it starts an Activity_Quote
         Toast.makeText(activity, "Цитаты", Toast.LENGTH_SHORT).show();
-        showFragment(fragmentManager, new Activity_Quote(), false);
+        showFragment(fragmentManager, new Activity_Authors(), false);
+      //  showFragment(fragmentManager, new Activity_Quote(), false);
+        slidingDrawer.animateClose();
     }
 
 
     public void onClickOpenHoroscope() {
-
         //it starts an Activity_Horoscope
         Toast.makeText(activity, "Гороскоп на сегодня", Toast.LENGTH_SHORT).show();
         showFragment(fragmentManager, new Activity_Horoscope(), false);
+        slidingDrawer.animateClose();
+    }
+
+
+    public void onClickOpenAnekdot() {
+        //it starts an Activity_Horoscope
+        Toast.makeText(activity, "Подборка лучших анекдотов", Toast.LENGTH_SHORT).show();
+        showFragment(fragmentManager, new Activity_Anekdot(), false);
+        slidingDrawer.animateClose();
     }
 
 
@@ -106,5 +120,25 @@ public class ToolBarFragmentActivityViewModel implements BaseFragmentActivityVie
 
     }
 
+    public void onClick(View view){
+        Log.e("final", "onclick ");
+        showFragment(fragmentManager, new Activity_Item_WC(), false);
 
+    }
+
+
+    @Override
+    public String[] value() {
+        return new String[0];
+    }
+
+    @Override
+    public boolean requireAll() {
+        return false;
+    }
+
+    @Override
+    public Class<? extends Annotation> annotationType() {
+        return null;
+    }
 }
